@@ -53,7 +53,7 @@ function IndustryDetail() {
           <div>
             <SectionHeading eyebrow="Challenges" title="What makes this sector different." />
             <ul className="mt-6 space-y-3">
-              {industry.challenges.map((c) => (
+              {industry.challenges.map((c: string) => (
                 <li key={c} className="flex items-start gap-3 rounded-lg border border-border bg-surface p-4">
                   <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                   <span className="text-sm text-foreground/80">{c}</span>
@@ -64,7 +64,7 @@ function IndustryDetail() {
           <div>
             <SectionHeading eyebrow="Solutions" title="How we support you." />
             <ul className="mt-6 space-y-3">
-              {industry.solutions.map((s) => (
+              {industry.solutions.map((s: string) => (
                 <li key={s} className="flex items-start gap-3 rounded-lg border border-border bg-surface p-4">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                   <span className="text-sm text-foreground/80">{s}</span>

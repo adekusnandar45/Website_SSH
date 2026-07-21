@@ -55,7 +55,7 @@ function ProjectDetail() {
         </div>
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {project.metrics.map((m) => (
+          {project.metrics.map((m: { label: string; value: string }) => (
             <div key={m.label} className="rounded-2xl border border-border bg-surface p-6 text-center shadow-card">
               <p className="font-heading text-3xl font-bold text-primary md:text-4xl">{m.value}</p>
               <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">{m.label}</p>

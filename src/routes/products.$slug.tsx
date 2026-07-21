@@ -81,7 +81,7 @@ function ProductDetail() {
               />
             </div>
             <div className="mt-4 flex flex-wrap gap-1.5">
-              {product.gases.map((g) => (
+              {product.gases.map((g: string) => (
                 <span key={g} className="rounded border border-border bg-muted px-2 py-1 text-[10px] font-medium">
                   {g}
                 </span>
@@ -126,7 +126,7 @@ function ProductDetail() {
                 </TabsList>
                 <TabsContent value="features">
                   <ul className="space-y-2">
-                    {product.features.map((f) => (
+                    {product.features.map((f: string) => (
                       <li key={f} className="flex items-start gap-3">
                         <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                         <span className="text-sm text-foreground/80">{f}</span>
@@ -136,7 +136,7 @@ function ProductDetail() {
                 </TabsContent>
                 <TabsContent value="specs">
                   <dl className="divide-y divide-border rounded-xl border border-border bg-surface">
-                    {product.specs.map((s) => (
+                    {product.specs.map((s: { label: string; value: string }) => (
                       <div key={s.label} className="grid grid-cols-[160px,1fr] gap-4 p-3 text-sm">
                         <dt className="font-semibold text-muted-foreground">{s.label}</dt>
                         <dd className="text-foreground">{s.value}</dd>

@@ -74,7 +74,7 @@ function ServiceDetail() {
             <div className="mt-12">
               <SectionHeading eyebrow="Benefits" title="Why operators choose us for this scope." />
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {service.benefits.map((b) => (
+                {service.benefits.map((b: string) => (
                   <li key={b} className="flex items-start gap-3 rounded-lg border border-border bg-surface p-4">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span className="text-sm text-foreground/80">{b}</span>
@@ -86,7 +86,7 @@ function ServiceDetail() {
             <div className="mt-12">
               <SectionHeading eyebrow="Scope of work" title="Included in a standard engagement." />
               <ul className="mt-6 divide-y divide-border rounded-xl border border-border bg-surface">
-                {service.scope.map((item, i) => (
+                {service.scope.map((item: string, i: number) => (
                   <li key={item} className="flex items-start gap-4 p-4">
                     <span className="font-heading text-sm font-bold text-primary">{String(i + 1).padStart(2, "0")}</span>
                     <span className="text-sm text-foreground/80">{item}</span>
@@ -98,7 +98,7 @@ function ServiceDetail() {
             <div className="mt-12">
               <SectionHeading eyebrow="Process" title="Five-step delivery." />
               <ol className="mt-6 grid gap-4 md:grid-cols-5">
-                {service.process.map((p, i) => (
+                {service.process.map((p: { title: string; body: string }, i: number) => (
                   <li key={p.title} className="rounded-xl border border-border bg-surface p-4">
                     <div className="font-heading text-2xl font-bold text-primary">0{i + 1}</div>
                     <p className="mt-2 font-heading text-sm font-bold">{p.title}</p>
@@ -111,7 +111,7 @@ function ServiceDetail() {
             <div className="mt-12">
               <SectionHeading eyebrow="Equipment & team" title="What we bring to site." />
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {service.equipment.map((e) => (
+                {service.equipment.map((e: string) => (
                   <li key={e} className="flex items-start gap-2 rounded-lg bg-muted/50 p-3 text-sm text-foreground/80">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                     {e}

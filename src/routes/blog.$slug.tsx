@@ -68,7 +68,7 @@ function PostDetail() {
           {post.author} · {new Date(post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })} · {post.readMinutes} min read
         </p>
         <div className="prose prose-lg mt-6 max-w-none">
-          {post.body.map((para, i) => (
+          {post.body.map((para: string, i: number) => (
             <p key={i} className="mt-4 text-base leading-relaxed text-foreground/80 md:text-lg">
               {para}
             </p>
