@@ -1,0 +1,677 @@
+import {
+  ShieldCheck,
+  Wind,
+  HardHat,
+  Gauge,
+  Package,
+  Factory,
+  Fuel,
+  Mountain,
+  Ship,
+  Wrench,
+  Hammer,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+
+export const site = {
+  name: "Surya Segara Hana",
+  short: "SSH",
+  tagline: "Industrial Safety Support Services",
+  description:
+    "Specialist H2S services, confined space entry, gas detector rental, sales and calibration for oil & gas, petrochemical, mining, marine, manufacturing, construction and energy operators across Indonesia.",
+  phone: "+62 812 0000 0000",
+  whatsapp: "6281200000000",
+  email: "sales@suryasegarahana.co.id",
+  address: "Jakarta, Indonesia",
+  hours: "Mon–Sat · 08:00 – 18:00 WIB · 24/7 emergency response",
+  years: 15,
+  projects: 500,
+  clients: 120,
+  manHours: "2.4M+",
+};
+
+export function buildWhatsAppUrl(message: string) {
+  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+export type Service = {
+  slug: string;
+  title: string;
+  short: string;
+  overview: string;
+  icon: LucideIcon;
+  image: string;
+  benefits: string[];
+  scope: string[];
+  process: { title: string; body: string }[];
+  equipment: string[];
+  faqs: { q: string; a: string }[];
+};
+
+export type Industry = {
+  slug: string;
+  name: string;
+  icon: LucideIcon;
+  short: string;
+  challenges: string[];
+  solutions: string[];
+};
+
+export type Product = {
+  slug: string;
+  name: string;
+  brand: string;
+  type: "Portable" | "Fixed";
+  detectorType: "Single Gas" | "Multi Gas" | "Area Monitor" | "Fixed System";
+  gases: string[];
+  image: string;
+  short: string;
+  features: string[];
+  specs: { label: string; value: string }[];
+};
+
+export type Project = {
+  slug: string;
+  title: string;
+  client: string;
+  industry: string;
+  scope: string;
+  image: string;
+  metrics: { label: string; value: string }[];
+  summary: string;
+};
+
+export type Post = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  author: string;
+  readMinutes: number;
+  image: string;
+  body: string[];
+};
+
+export const industries: Industry[] = [
+  {
+    slug: "oil-gas",
+    name: "Oil & Gas",
+    icon: Fuel,
+    short: "Upstream, midstream and downstream operators trust us for H2S and confined-space coverage on rigs, tanks and pipelines.",
+    challenges: [
+      "High H2S and volatile hydrocarbon exposure",
+      "Tank cleaning and vessel entry with tight schedules",
+      "Remote offshore locations with narrow response windows",
+    ],
+    solutions: [
+      "24/7 standby H2S safety technicians and detection arrays",
+      "Turnkey confined space entry teams with rescue capability",
+      "Rental fleets of Dräger and MSA multi-gas detectors, calibrated on-site",
+    ],
+  },
+  {
+    slug: "petrochemical",
+    name: "Petrochemical",
+    icon: Factory,
+    short: "Calibrated detection and CSE for reactors, storage and turnarounds.",
+    challenges: [
+      "Complex chemical inventories requiring multi-gas sensing",
+      "Shutdown turnarounds under aggressive timelines",
+      "Strict regulatory documentation",
+    ],
+    solutions: [
+      "Custom multi-gas rental packages with data logging",
+      "Certified CSE teams for reactor and column entries",
+      "Full ISO 17025-aligned calibration records",
+    ],
+  },
+  {
+    slug: "mining",
+    name: "Mining",
+    icon: Mountain,
+    short: "Underground and open-pit gas monitoring, refuge chamber testing and rescue standby.",
+    challenges: [
+      "Methane, CO and low oxygen risks underground",
+      "Long distances between working faces",
+      "Explosion-proof equipment requirements",
+    ],
+    solutions: [
+      "IECEx and ATEX certified fixed and portable detectors",
+      "On-site calibration and bump-testing programs",
+      "Confined space and rescue teams for shafts and stopes",
+    ],
+  },
+  {
+    slug: "marine",
+    name: "Marine",
+    icon: Ship,
+    short: "Cargo hold, ballast and bunker tank certification for vessels in Indonesian waters.",
+    challenges: [
+      "Hot work permits in enclosed spaces",
+      "Tanker gas-free certification",
+      "Port turnaround pressure",
+    ],
+    solutions: [
+      "Certified marine chemist-style gas-free surveys",
+      "Portable multi-gas rental with delivery to port",
+      "24/7 attendants for hot work and tank entry",
+    ],
+  },
+  {
+    slug: "manufacturing",
+    name: "Manufacturing",
+    icon: Wrench,
+    short: "Process safety cover for chemical plants, coating lines and warehouses.",
+    challenges: [
+      "Solvent vapor and toxic gas leaks",
+      "Confined-space maintenance on tanks and reactors",
+      "Detector fleet management across sites",
+    ],
+    solutions: [
+      "Fixed detection design, installation and commissioning",
+      "Managed rental with scheduled calibration",
+      "CSE crews on demand",
+    ],
+  },
+  {
+    slug: "construction",
+    name: "Construction",
+    icon: Hammer,
+    short: "Excavations, tunnels and utility works secured with atmosphere monitoring and standby rescue.",
+    challenges: [
+      "Underground utility vaults and manholes",
+      "Sewer and drainage tie-ins",
+      "Short-duration jobs across many sites",
+    ],
+    solutions: [
+      "Daily and weekly detector rental with courier delivery",
+      "Standby confined-space attendants",
+      "Toolbox training on atmospheric hazards",
+    ],
+  },
+  {
+    slug: "energy",
+    name: "Energy",
+    icon: Zap,
+    short: "Power generation, geothermal and renewables plants — gas and vessel safety end to end.",
+    challenges: [
+      "SF6, H2S and ammonia risks",
+      "Vessel entries during outages",
+      "Multi-site fleet compliance",
+    ],
+    solutions: [
+      "Specialist detection for geothermal H2S",
+      "Turnaround CSE and rescue standby",
+      "Managed calibration programs",
+    ],
+  },
+];
+
+export const services: Service[] = [
+  {
+    slug: "h2s",
+    title: "H2S Safety Services",
+    short: "Hydrogen sulfide standby, monitoring and emergency response for high-risk operations.",
+    overview:
+      "Hydrogen sulfide is odorless above 100 ppm and lethal within seconds. Our H2S service places certified safety technicians, calibrated detection arrays and full breathing-air support alongside your crew — so drilling, workover, well-testing and turnaround activities move forward without exposure incidents.",
+    icon: Wind,
+    image: "/img/h2s-service.jpg",
+    benefits: [
+      "Continuous atmospheric monitoring with wind-direction awareness",
+      "Certified H2S technicians available 24/7 across Indonesia",
+      "Full SCBA and cascade breathing-air packages",
+      "Rescue-capable teams with documented ERPs",
+    ],
+    scope: [
+      "Site H2S risk assessment and ERP development",
+      "Deployment of fixed and portable H2S detectors",
+      "Wind sock, wind station and briefing area setup",
+      "H2S safety technician standby (shift-based)",
+      "SCBA, cascade systems and escape sets supply",
+      "Post-job reporting with calibration and log records",
+    ],
+    process: [
+      { title: "Assess", body: "Site survey, hazard identification and equipment sizing." },
+      { title: "Mobilize", body: "Certified crew and calibrated detection to site within 24 hours." },
+      { title: "Monitor", body: "Continuous atmospheric monitoring with shift handovers." },
+      { title: "Respond", body: "Rescue-ready team with documented ERP drills." },
+      { title: "Report", body: "Full documentation pack for HSE and client audit." },
+    ],
+    equipment: [
+      "Dräger X-am 5000 / 8000 multi-gas detectors",
+      "MSA Altair 4XR / 5X portables",
+      "Area monitors with telemetry",
+      "SCBA and 300-bar cascade systems",
+    ],
+    faqs: [
+      {
+        q: "How quickly can you mobilize an H2S standby team?",
+        a: "Standard mobilization is 24 hours anywhere in Indonesia; emergency response can start within 6 hours in Java and Kalimantan.",
+      },
+      {
+        q: "Are your technicians certified?",
+        a: "All H2S technicians hold OPITO or equivalent H2S training plus IADC / RigPass and are refreshed annually.",
+      },
+      {
+        q: "Do you provide breathing air?",
+        a: "Yes — SCBA, escape sets and 300-bar cascade systems are all part of our standard package.",
+      },
+    ],
+  },
+  {
+    slug: "confined-space-entry",
+    title: "Confined Space Entry",
+    short: "Turnkey CSE teams — permit control, atmospheric testing, attendants and rescue standby.",
+    overview:
+      "Every year Indonesian operators lose crews inside tanks, vessels and vaults. Our CSE service brings the full control set — permit-to-work, atmospheric testing, attendant coverage and vertical rescue — so entry work stays within regulation and comes back home safe.",
+    icon: HardHat,
+    image: "/img/confined-space.jpg",
+    benefits: [
+      "OSHA and Permenaker-aligned permit control",
+      "Pre-entry and continuous gas testing",
+      "Trained attendants and entry supervisors",
+      "Vertical and confined space rescue standby",
+    ],
+    scope: [
+      "Permit-to-work issuance and control",
+      "Atmospheric testing before and during entry",
+      "Attendant and entry supervisor deployment",
+      "Rescue team with tripods, winches and SRLs",
+      "Toolbox talks and JSA facilitation",
+      "Post-job entry log and incident-free reporting",
+    ],
+    process: [
+      { title: "Plan", body: "Space classification, JSA and rescue plan development." },
+      { title: "Isolate", body: "LOTO verification and ventilation setup." },
+      { title: "Test", body: "Atmospheric testing with calibrated multi-gas detectors." },
+      { title: "Attend", body: "Continuous attendant coverage and communications." },
+      { title: "Rescue", body: "Standby vertical rescue and casualty extraction capability." },
+    ],
+    equipment: [
+      "Tripods and davit arms with 3-way retrieval",
+      "Full-body harnesses and self-retracting lifelines",
+      "Multi-gas detectors and sample pumps",
+      "Blowers, ducting and communications sets",
+    ],
+    faqs: [
+      {
+        q: "Do you supply the rescue team as well as attendants?",
+        a: "Yes. Every CSE crew includes attendants, entry supervisor and a rescue-capable team with vertical extraction gear.",
+      },
+      {
+        q: "Which regulations do you work to?",
+        a: "OSHA 1910.146, ANSI Z117.1 and Kepmenaker 1978 / Permenaker 09/2016.",
+      },
+      {
+        q: "Can you support turnaround shutdowns?",
+        a: "Absolutely — from single-tank entries to full refinery turnarounds with dozens of concurrent permits.",
+      },
+    ],
+  },
+  {
+    slug: "gas-detector-calibration",
+    title: "Gas Detector Calibration",
+    short: "Certified calibration and bump testing for portable and fixed detection fleets.",
+    overview:
+      "A detector is only as good as its last calibration. Our lab and on-site calibration service keeps your Dräger, MSA, Honeywell, RKI and BW fleets responsive and audit-ready — with traceable certificates and configurable service intervals.",
+    icon: Gauge,
+    image: "/img/calibration-lab.jpg",
+    benefits: [
+      "Traceable calibration to ISO 17025-aligned procedures",
+      "OEM-approved gas mixtures and flow controllers",
+      "On-site and workshop options",
+      "Digital certificates and fleet reporting",
+    ],
+    scope: [
+      "Bump testing and full span calibration",
+      "Sensor diagnostics and replacement",
+      "Firmware updates and configuration",
+      "Docking-station managed programs",
+      "Certificate issuance and fleet register",
+    ],
+    process: [
+      { title: "Collect", body: "Pickup or delivery of your detector fleet." },
+      { title: "Diagnose", body: "Function check, sensor life review and firmware update." },
+      { title: "Calibrate", body: "Span calibration with traceable OEM gas mixtures." },
+      { title: "Certify", body: "Digital certificate issued for each unit." },
+      { title: "Return", body: "Detectors returned service-ready with fleet report." },
+    ],
+    equipment: [
+      "Certified calibration gas cylinders (H2S, CO, O2, LEL, CO2, SO2, NH3, Cl2)",
+      "OEM docking stations (Dräger X-dock, MSA GALAXY, Honeywell IntelliDoX)",
+      "Digital flow controllers",
+      "ISO 17025-aligned procedures",
+    ],
+    faqs: [
+      {
+        q: "Which brands do you calibrate?",
+        a: "Dräger, MSA, Honeywell / BW, RKI, Riken Keiki, GfG, Crowcon and Industrial Scientific.",
+      },
+      {
+        q: "How long does calibration take?",
+        a: "Workshop turnaround is 24–48 hours; on-site programs run same-day.",
+      },
+      {
+        q: "Do you supply calibration gas?",
+        a: "Yes — full range of certified gas mixtures with regulators and flow controllers.",
+      },
+    ],
+  },
+];
+
+export const products: Product[] = [
+  {
+    slug: "drager-x-am-8000",
+    name: "X-am 8000",
+    brand: "Dräger",
+    type: "Portable",
+    detectorType: "Multi Gas",
+    gases: ["H2S", "CO", "O2", "LEL", "CO2", "SO2"],
+    image: "/img/product-portable.jpg",
+    short: "1-to-7 gas portable with pump for tank and vessel entry.",
+    features: [
+      "Up to 7 sensors including PID and dual IR",
+      "Integrated pump for pre-entry sampling",
+      "Colour display with visible signal-light strips",
+      "Bluetooth data transfer and Gas Detection Connect",
+    ],
+    specs: [
+      { label: "Sensors", value: "Up to 7 (EC, CatEx, IR, PID)" },
+      { label: "Sampling", value: "Diffusion or integrated pump" },
+      { label: "Ingress protection", value: "IP67" },
+      { label: "Certification", value: "IECEx, ATEX Zone 0" },
+      { label: "Battery", value: "Li-ion, > 12 h continuous" },
+    ],
+  },
+  {
+    slug: "msa-altair-5x",
+    name: "ALTAIR 5X",
+    brand: "MSA",
+    type: "Portable",
+    detectorType: "Multi Gas",
+    gases: ["H2S", "CO", "O2", "LEL", "SO2", "NH3", "Cl2"],
+    image: "/img/product-portable.jpg",
+    short: "Rugged multi-gas with PID for VOC coverage.",
+    features: [
+      "MotionAlert & InstantAlert man-down alarms",
+      "Optional PID for VOC monitoring",
+      "Integrated sampling pump",
+      "GALAXY GX2 docking compatibility",
+    ],
+    specs: [
+      { label: "Sensors", value: "Up to 6 including PID" },
+      { label: "Sampling", value: "Motorized pump 0.25–0.5 lpm" },
+      { label: "Ingress protection", value: "IP65" },
+      { label: "Certification", value: "IECEx, ATEX, INMETRO" },
+      { label: "Battery", value: "18 h Li-ion" },
+    ],
+  },
+  {
+    slug: "honeywell-bw-icon",
+    name: "BW Icon",
+    brand: "Honeywell",
+    type: "Portable",
+    detectorType: "Multi Gas",
+    gases: ["H2S", "CO", "O2", "LEL"],
+    image: "/img/product-portable.jpg",
+    short: "Zero-maintenance 2-year disposable multi-gas.",
+    features: [
+      "No calibration, no charging — 2 year run life",
+      "Always-on continuous monitoring",
+      "Bluetooth compliance reporting",
+      "Ultra-compact form factor",
+    ],
+    specs: [
+      { label: "Sensors", value: "H2S, CO, O2, LEL" },
+      { label: "Life", value: "24 months continuous" },
+      { label: "Ingress protection", value: "IP66/68" },
+      { label: "Certification", value: "IECEx, ATEX, CSA" },
+      { label: "Weight", value: "108 g" },
+    ],
+  },
+  {
+    slug: "rki-gx-3r-pro",
+    name: "GX-3R Pro",
+    brand: "RKI",
+    type: "Portable",
+    detectorType: "Multi Gas",
+    gases: ["H2S", "CO", "O2", "LEL"],
+    image: "/img/product-portable.jpg",
+    short: "Compact 5-gas monitor with man-down alarm.",
+    features: [
+      "5-gas monitoring in a palm-size housing",
+      "Man-down and panic alarms",
+      "Rechargeable Li-ion with 25 h life",
+      "IrDA data communication",
+    ],
+    specs: [
+      { label: "Sensors", value: "Up to 5" },
+      { label: "Sampling", value: "Diffusion" },
+      { label: "Ingress protection", value: "IP66/68" },
+      { label: "Certification", value: "IECEx, ATEX, UL/CSA" },
+      { label: "Weight", value: "165 g" },
+    ],
+  },
+  {
+    slug: "drager-polytron-8900",
+    name: "Polytron 8900 UGLD",
+    brand: "Dräger",
+    type: "Fixed",
+    detectorType: "Fixed System",
+    gases: ["Ultrasonic gas leak"],
+    image: "/img/product-portable.jpg",
+    short: "Ultrasonic gas leak detector for high-pressure lines.",
+    features: [
+      "Ultrasonic detection of pressurised gas leaks",
+      "SIL-2 certified",
+      "HART-over-4-20 mA output",
+      "Explosion-proof housing",
+    ],
+    specs: [
+      { label: "Detection", value: "Ultrasonic acoustic 25–100 kHz" },
+      { label: "Output", value: "4–20 mA, HART, Modbus" },
+      { label: "Certification", value: "IECEx, ATEX, SIL-2" },
+      { label: "Housing", value: "316 stainless steel" },
+    ],
+  },
+  {
+    slug: "msa-general-monitors-s5000",
+    name: "S5000 Fixed Gas Monitor",
+    brand: "MSA",
+    type: "Fixed",
+    detectorType: "Fixed System",
+    gases: ["H2S", "CO", "O2", "LEL"],
+    image: "/img/product-portable.jpg",
+    short: "Modular fixed transmitter for permanent installation.",
+    features: [
+      "Modular sensor cartridges",
+      "Local LCD with intuitive menu",
+      "HART, Modbus and 4–20 mA",
+      "Optional relays for local shutdown",
+    ],
+    specs: [
+      { label: "Sensors", value: "EC, CatEx, IR" },
+      { label: "Output", value: "4–20 mA, HART, Modbus" },
+      { label: "Certification", value: "IECEx, ATEX, FM, CSA" },
+      { label: "Housing", value: "316 SS explosion-proof" },
+    ],
+  },
+];
+
+export const projects: Project[] = [
+  {
+    slug: "kalimantan-turnaround",
+    title: "Refinery turnaround CSE coverage — East Kalimantan",
+    client: "National Oil Operator",
+    industry: "Oil & Gas",
+    scope: "H2S standby, confined space entry, rescue standby",
+    image: "/img/hero-refinery.jpg",
+    metrics: [
+      { label: "Duration", value: "42 days" },
+      { label: "Concurrent entries", value: "24 / shift" },
+      { label: "Incidents", value: "Zero LTI" },
+    ],
+    summary:
+      "Full-scope turnaround coverage for a 60-permit-per-day shutdown, mobilising 48 technicians and 60 portable detectors with zero recordable incidents.",
+  },
+  {
+    slug: "geothermal-h2s-monitoring",
+    title: "Geothermal H2S monitoring — West Java",
+    client: "Indonesian Geothermal Producer",
+    industry: "Energy",
+    scope: "Fixed H2S detection design, commissioning and calibration",
+    image: "/img/h2s-service.jpg",
+    metrics: [
+      { label: "Detectors deployed", value: "36" },
+      { label: "Site uptime", value: "99.97%" },
+      { label: "Response time", value: "< 6 s" },
+    ],
+    summary:
+      "Designed, installed and commissioned a fixed H2S detection grid across a 55 MW geothermal facility, plus a rolling calibration program.",
+  },
+  {
+    slug: "port-tank-clean-marine",
+    title: "Port tank-cleaning campaign — Tanjung Priok",
+    client: "International Shipping Line",
+    industry: "Marine",
+    scope: "Gas-free surveys, CSE attendants, portable rental",
+    image: "/img/confined-space.jpg",
+    metrics: [
+      { label: "Vessels served", value: "18" },
+      { label: "Detectors on hire", value: "42" },
+      { label: "Turnaround", value: "24 h avg." },
+    ],
+    summary:
+      "Provided gas-free certification and CSE cover for a fleet-wide tank cleaning campaign, keeping every vessel to schedule.",
+  },
+];
+
+export const posts: Post[] = [
+  {
+    slug: "why-continuous-h2s-monitoring-matters",
+    title: "Why continuous H2S monitoring matters more than single-shot readings",
+    excerpt:
+      "Hydrogen sulfide readings shift by the minute. Here's why compliance-grade programs rely on continuous, logged detection rather than spot tests.",
+    date: "2026-05-12",
+    author: "SSH HSE Team",
+    readMinutes: 6,
+    image: "/img/h2s-service.jpg",
+    body: [
+      "Hydrogen sulfide is heavier than air, drifts with the wind and reaches lethal concentrations within seconds. A single-shot reading tells you the atmosphere was safe at 10:03; it says nothing about 10:04.",
+      "Modern H2S programs run continuous personal monitoring, area monitors with telemetry and site-wide logging. This is how operators demonstrate compliance in an audit — and how they intervene before workers are exposed.",
+      "In our own field records, more than 60% of alarm events on drilling and workover sites happen within seconds of a stable reading. Continuous detection catches those spikes. Spot testing misses them.",
+    ],
+  },
+  {
+    slug: "confined-space-entry-checklist",
+    title: "A field-tested confined space entry checklist for Indonesian operators",
+    excerpt:
+      "A concise CSE checklist mapped to Permenaker 09/2016 and OSHA 1910.146 — with the field-level detail that keeps entries incident-free.",
+    date: "2026-03-30",
+    author: "SSH Operations",
+    readMinutes: 8,
+    image: "/img/confined-space.jpg",
+    body: [
+      "Confined space entry incidents almost never come down to one broken control; they come down to a chain of small omissions. A rigorous checklist stops that chain.",
+      "Before entry: classify the space, verify LOTO, ventilate and test the atmosphere. During entry: keep continuous communications with an attendant who stays outside. After entry: log gas readings and reconcile the permit.",
+      "The Permenaker 09/2016 framework is compatible with OSHA 1910.146 — most Indonesian operators run to whichever is stricter. A single procedure covering both keeps documentation simple and audits painless.",
+    ],
+  },
+];
+
+export const trustBadges = [
+  "ISO 9001:2015",
+  "ISO 45001:2018",
+  "ISO 14001:2015",
+  "Migas Certified",
+  "Kemnaker Registered",
+  "IADC Member",
+];
+
+export const certifications = [
+  {
+    name: "ISO 9001:2015",
+    body: "Quality management system for consistent service delivery.",
+    icon: ShieldCheck,
+  },
+  {
+    name: "ISO 45001:2018",
+    body: "Occupational health and safety management standard.",
+    icon: HardHat,
+  },
+  {
+    name: "ISO 14001:2015",
+    body: "Environmental management alignment across operations.",
+    icon: Wind,
+  },
+  {
+    name: "Migas Certified",
+    body: "Ministry of Energy and Mineral Resources equipment certification.",
+    icon: Fuel,
+  },
+  {
+    name: "Kemnaker Registered",
+    body: "Ministry of Manpower registered personnel and equipment.",
+    icon: Package,
+  },
+  {
+    name: "IECEx / ATEX",
+    body: "Hazardous-area rated detection portfolio across every service.",
+    icon: Gauge,
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      "Their H2S standby crew mobilised inside 24 hours for a well-testing job in South Sumatra. Documentation was perfect and we finished ahead of plan.",
+    author: "HSE Manager",
+    company: "Upstream oil operator",
+  },
+  {
+    quote:
+      "We managed 60 concurrent permits during a turnaround with zero LTIs. Their attendants were the calmest people on site.",
+    author: "Turnaround Lead",
+    company: "National refinery",
+  },
+  {
+    quote:
+      "Calibration turnaround dropped from a week to 48 hours after we moved to their program. Fleet compliance is finally under control.",
+    author: "Procurement Manager",
+    company: "Petrochemical producer",
+  },
+  {
+    quote:
+      "The team knows geothermal H2S. Our fixed detection grid has been up 99.97% since commissioning.",
+    author: "Plant Manager",
+    company: "Geothermal producer",
+  },
+];
+
+export const faqs = [
+  {
+    q: "How quickly can Surya Segara Hana mobilise a safety team?",
+    a: "Standard mobilisation is within 24 hours across Indonesia; emergency response can start within 6 hours in Java and Kalimantan.",
+  },
+  {
+    q: "Do you cover offshore locations?",
+    a: "Yes. Our crews and detection fleets are regularly deployed to offshore platforms, FSOs and jack-up rigs across the archipelago.",
+  },
+  {
+    q: "Which detector brands do you rent, sell and calibrate?",
+    a: "Dräger, MSA, Honeywell / BW, RKI, Riken Keiki, GfG, Crowcon and Industrial Scientific — plus fixed systems from Dräger Polytron and MSA General Monitors.",
+  },
+  {
+    q: "Are your technicians certified?",
+    a: "Every technician holds H2S, CSE and rescue certifications, refreshed annually. Documentation is provided with every mobilisation.",
+  },
+  {
+    q: "Can you handle full turnaround shutdowns?",
+    a: "Yes — from a single tank entry to a refinery-wide turnaround with dozens of concurrent permits and a full rescue team.",
+  },
+  {
+    q: "How do rental packages work?",
+    a: "Daily, weekly and monthly rates with courier delivery, pre-calibration and post-return service. Ask for our current rental catalogue.",
+  },
+];
