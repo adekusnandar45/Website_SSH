@@ -139,20 +139,17 @@ function TrustBar() {
         <Stat value={site.projects} suffix="+" label={t("Proyek Selesai", "Projects delivered")} />
         <Stat value={site.clients} suffix="+" label={t("Klien Perusahaan", "Enterprise clients")} />
         <Stat value={24} suffix="/7" label={t("Tanggap Darurat", "Emergency response")} />
-        <div className="col-span-2 hidden items-center gap-2 sm:col-span-4 lg:col-span-1 lg:flex">
-          <span className="text-xs uppercase tracking-wider text-muted-foreground">{t("Jam Kerja Aman", "Safe man-hours")}</span>
-          <span className="font-heading text-2xl font-bold text-foreground">{site.manHours}</span>
-        </div>
+        <Stat value={site.manHours.replace("+", "")} suffix="+" label={t("Jam Kerja Aman", "Safe man-hours")} />
       </div>
     </section>
   );
 }
 
-function Stat({ value, suffix, label }: { value: number; suffix?: string; label: string }) {
+function Stat({ value, suffix, label }: { value: number | string; suffix?: string; label: string }) {
   return (
     <div>
       <div className="font-heading text-3xl font-bold text-foreground md:text-4xl">
-        {value.toLocaleString()}
+        {typeof value === 'number' ? value.toLocaleString() : value}
         {suffix}
       </div>
       <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{label}</p>

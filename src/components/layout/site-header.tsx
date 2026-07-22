@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import logoSurya from "@/assets/Logo_Surya.png";
 import { useLanguage } from "@/lib/language-context";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 function Logo({ className }: { className?: string }) {
   return (
@@ -137,8 +138,9 @@ export function SiteHeader() {
               href={buildWhatsAppUrl(t("Halo Surya Segara, saya ingin minta penawaran.", "Hello Surya Segara, I would like a quotation."))}
               target="_blank"
               rel="noopener"
-              className="inline-flex h-10 items-center justify-center rounded-md border border-border bg-transparent px-3.5 text-xs font-semibold text-foreground transition hover:border-foreground/40 hover:bg-muted"
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-[#25D366] px-3.5 text-xs font-semibold text-white shadow-sm transition hover:bg-[#25D366]/90"
             >
+              <WhatsAppIcon className="h-4 w-4" />
               WhatsApp
             </a>
             <Link
@@ -304,8 +306,9 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             href={buildWhatsAppUrl(t("Halo Surya Segara, saya ingin minta penawaran.", "Hello Surya Segara, I would like a quotation."))}
             target="_blank"
             rel="noopener"
-            className="inline-flex h-12 items-center justify-center rounded-md border border-border bg-surface px-5 text-sm font-semibold text-foreground"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 text-sm font-semibold text-white shadow-sm"
           >
+            <WhatsAppIcon className="h-4 w-4" />
             {t("Chat WhatsApp", "Chat on WhatsApp")}
           </a>
         </div>
