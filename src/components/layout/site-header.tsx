@@ -3,23 +3,11 @@ import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { services, industries, site, buildWhatsAppUrl, buildEmailUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import { LanguageSwitcher } from "./language-switcher";
-import { useLanguage } from "@/lib/language-context";
 
 function Logo({ className }: { className?: string }) {
   return (
-    <Link to="/" className={cn("flex items-center gap-2.5", className)} aria-label={site.name}>
-      <span className="grid h-10 w-10 place-items-center rounded-md bg-primary text-primary-foreground shadow-card">
-        <span className="font-heading text-lg font-bold leading-none">S</span>
-      </span>
-      <span className="flex flex-col leading-tight">
-        <span className="font-heading text-sm font-bold uppercase tracking-wider text-foreground">
-          Surya Segara
-        </span>
-        <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          Hana · Safety
-        </span>
-      </span>
+    <Link to="/" className={cn("flex items-center", className)} aria-label={site.name}>
+      <img src={logoSurya} alt="Surya Segara Logo" className="h-10 w-auto object-contain" />
     </Link>
   );
 }

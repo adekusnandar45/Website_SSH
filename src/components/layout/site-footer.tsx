@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { services, industries, site, buildEmailUrl } from "@/lib/site";
-import { useLanguage } from "@/lib/language-context";
 
 export function SiteFooter() {
   const { t } = useLanguage();
@@ -16,9 +15,7 @@ export function SiteFooter() {
             </span>
             <span className="flex flex-col leading-tight">
               <span className="font-heading text-sm font-bold uppercase tracking-wider">Surya Segara Hana</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] opacity-70">
-                {t("Keselamatan Industri", "Industrial Safety")}
-              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] opacity-70">Industrial Safety</span>
             </span>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed opacity-80">
