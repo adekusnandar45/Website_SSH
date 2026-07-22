@@ -379,8 +379,22 @@ export const products: Product[] = [
     gases: ["H2S", "CO", "O2", "LEL", "CO2", "SO2"],
     image: "/img/ventis-pro5.png",
     short: "Flexible multi-gas detector with advanced connectivity and man-down alarms.",
-    features: ["Up to 5 gases monitored simultaneously", "Man-down alarm and panic button", "Wireless connectivity for live monitoring"],
-    specs: [{ label: "Sensors", value: "Up to 5" }, { label: "Ingress protection", value: "IP68" }]
+    features: [
+      "Monitors up to 5 gases simultaneously",
+      "LENS Wireless for peer-to-peer alarm sharing",
+      "Man-down alarm and dedicated panic button",
+      "Wi-Fi, cellular, and satellite connectivity options",
+      "IP68 water and dust resistant",
+      "Compatible with DSX Docking Station"
+    ],
+    specs: [
+      { label: "Dimensions", value: "104 x 58 x 36 mm" },
+      { label: "Weight", value: "200 g (without pump)" },
+      { label: "Sensors", value: "Catalytic Bead, Electrochemical, PID" },
+      { label: "Ingress Protection", value: "IP68" },
+      { label: "Battery", value: "Rechargeable Li-ion (up to 36 hours)" },
+      { label: "Display", value: "Backlit LCD" }
+    ]
   },
   {
     slug: "ventis-mx4",
@@ -391,8 +405,20 @@ export const products: Product[] = [
     gases: ["H2S", "CO", "O2", "LEL"],
     image: "/img/ventis-mx4.png",
     short: "Reliable 4-gas monitor for personal safety.",
-    features: ["Detects up to four gases", "Rugged and durable", "Compatible with DSX Docking Station"],
-    specs: [{ label: "Sensors", value: "1-4 gases" }, { label: "Ingress protection", value: "IP67" }]
+    features: [
+      "Detects up to four gases (LEL, CO, H2S, O2)",
+      "Rugged and durable polycarbonate housing",
+      "Compatible with DSX Docking Station and iNet",
+      "Audible, visual, and vibrating alarms",
+      "Available with or without integral pump"
+    ],
+    specs: [
+      { label: "Dimensions", value: "103 x 58 x 30 mm" },
+      { label: "Weight", value: "182 g" },
+      { label: "Sensors", value: "1-4 gases" },
+      { label: "Battery", value: "Rechargeable Li-ion" },
+      { label: "Ingress Protection", value: "IP67" }
+    ]
   },
   {
     slug: "mx6-ibrid",
@@ -403,8 +429,20 @@ export const products: Product[] = [
     gases: ["H2S", "CO", "O2", "LEL", "VOC", "NH3"],
     image: "/img/mx6-ibrid.png",
     short: "Advanced 6-gas detector with full color display.",
-    features: ["Monitors up to 6 gases", "Full color LCD display", "24 sensor options including PID and IR"],
-    specs: [{ label: "Sensors", value: "Up to 6" }, { label: "Display", value: "Color LCD" }]
+    features: [
+      "Monitors up to 6 gases simultaneously",
+      "Full color graphic LCD display",
+      "24 interchangeable sensor options (incl. PID and IR)",
+      "Rugged overmold design for harsh environments",
+      "Intuitive menu-driven navigation"
+    ],
+    specs: [
+      { label: "Dimensions", value: "135 x 77 x 43 mm" },
+      { label: "Weight", value: "409 g" },
+      { label: "Sensors", value: "Up to 6 gases" },
+      { label: "Display", value: "Color Graphic LCD" },
+      { label: "Ingress Protection", value: "IP66" }
+    ]
   },
   {
     slug: "tango-tx2",
@@ -415,8 +453,20 @@ export const products: Product[] = [
     gases: ["H2S", "CO", "O2", "SO2", "NO2"],
     image: "/img/tango-tx2.png",
     short: "Two-gas monitor with individual sensors for enhanced accuracy.",
-    features: ["Two-gas detection", "DualSense technology", "Ultra-compact design"],
-    specs: [{ label: "Sensors", value: "2 individual sensors" }]
+    features: [
+      "Detects 2 gases simultaneously with one device",
+      "DualSense Technology for increased safety",
+      "Guaranteed for Life™ warranty",
+      "AlarmAmp™ increases audible alarm to 110 dB",
+      "Ultra-compact and lightweight design"
+    ],
+    specs: [
+      { label: "Dimensions", value: "99 x 51 x 35 mm" },
+      { label: "Weight", value: "126 g" },
+      { label: "Sensors", value: "2 individual sensors" },
+      { label: "Battery", value: "Replaceable Lithium (2 years)" },
+      { label: "Ingress Protection", value: "IP66 / IP67" }
+    ]
   },
 
   // ISC Portable Single-Gas
@@ -429,8 +479,21 @@ export const products: Product[] = [
     gases: ["H2S", "CO", "SO2", "NO2"],
     image: "/img/tango-tx1.png",
     short: "Single-gas monitor utilizing DualSense technology.",
-    features: ["DualSense technology for redundant sensing", "Guaranteed for Life warranty", "Always-on operation"],
-    specs: [{ label: "Sensors", value: "Single gas (Dual redundant)" }]
+    features: [
+      "DualSense Technology for redundant sensing",
+      "Guaranteed for Life™ warranty",
+      "Always-on operation with 2-3 years runtime",
+      "Polycarbonate case with rubber overmold",
+      "100 dB alarm (110 dB with optional AlarmAmp™)"
+    ],
+    specs: [
+      { label: "Dimensions", value: "99 x 51 x 35 mm" },
+      { label: "Weight", value: "126 g" },
+      { label: "Sensors", value: "Electrochemical (CO, H2S, NO2, SO2)" },
+      { label: "Ingress Protection", value: "IP66 / IP67" },
+      { label: "Battery", value: "3.6V Primary Lithium (2-3 years)" },
+      { label: "Display", value: "Segment LCD" }
+    ]
   },
   {
     slug: "gasbadge-pro",
@@ -441,8 +504,20 @@ export const products: Product[] = [
     gases: ["H2S", "CO", "O2", "NH3", "Cl2", "ClO2", "HCN", "NO2", "PH3", "SO2"],
     image: "/img/gasbadge-pro.png",
     short: "Interchangeable sensor single-gas monitor.",
-    features: ["Interchangeable smart sensors", "Lifetime warranty", "IR communications"],
-    specs: [{ label: "Sensors", value: "Single gas (Interchangeable)" }]
+    features: [
+      "Interchangeable smart sensors",
+      "Guaranteed for Life™ warranty",
+      "IR communications for docking and configuration",
+      "Customizable alarm limits",
+      "Water resistant and durable housing"
+    ],
+    specs: [
+      { label: "Dimensions", value: "94 x 50.8 x 27.9 mm" },
+      { label: "Weight", value: "85 g" },
+      { label: "Sensors", value: "Single gas (Interchangeable)" },
+      { label: "Battery", value: "Replaceable CR2 (1 year)" },
+      { label: "Display", value: "Custom LCD with backlight" }
+    ]
   },
   {
     slug: "t40-ii-rattler",
@@ -453,8 +528,20 @@ export const products: Product[] = [
     gases: ["H2S", "CO"],
     image: "/img/t40-ii-rattler.png",
     short: "Compact, robust, and reliable single-gas monitor.",
-    features: ["2-year run time", "Ultra-fast response time", "IP68 water and dust resistant"],
-    specs: [{ label: "Sensors", value: "H2S or CO" }, { label: "Battery", value: "2 years" }]
+    features: [
+      "Ultra-fast response time (t90 < 10 seconds)",
+      "2-year continuous run time",
+      "IP68 water and dust resistant",
+      "Compact, robust, and reliable design",
+      "Clear visual, audible, and vibrating alarms"
+    ],
+    specs: [
+      { label: "Dimensions", value: "86 x 58 x 29 mm" },
+      { label: "Weight", value: "98 g" },
+      { label: "Sensors", value: "H2S or CO" },
+      { label: "Battery", value: "Non-replaceable Li (2 years)" },
+      { label: "Alarms", value: "95 dB audible alarm" }
+    ]
   },
 
   // ISC Area Monitors & Docking
@@ -467,8 +554,22 @@ export const products: Product[] = [
     gases: ["H2S", "CO", "O2", "LEL", "NH3", "Cl2", "VOCs"],
     image: "/img/radius-bz1.png",
     short: "Rugged area monitor with industry-leading battery life and LENS Wireless.",
-    features: ["7 days of continuous run time", "LENS Wireless", "108 dB alarms", "DualSense Technology"],
-    specs: [{ label: "Sensors", value: "Up to 7 gases" }, { label: "Runtime", value: "168 hours" }]
+    features: [
+      "Detects up to 7 gases simultaneously",
+      "DualSense Technology for redundant sensing",
+      "LENS Wireless for seamless alarm sharing",
+      "108 dB audible alarm & redundant LED strobes",
+      "Customizable text-based alarm action messages",
+      "Downward-facing sensors for all-weather accuracy"
+    ],
+    specs: [
+      { label: "Dimensions", value: "29 x 29 x 55 cm" },
+      { label: "Weight", value: "7.5 kg" },
+      { label: "Sensors", value: "Up to 7 gases" },
+      { label: "Ingress Protection", value: "IP66" },
+      { label: "Battery Runtime", value: "Up to 7 days (168 hours)" },
+      { label: "Alarms", value: "108 dB at 1m, visual strobes" }
+    ]
   },
   {
     slug: "dsx-docking-station",
@@ -479,8 +580,20 @@ export const products: Product[] = [
     gases: ["Calibration"],
     image: "/img/dsx-docking-station.png",
     short: "Automated maintenance, record keeping, and fleet management.",
-    features: ["Bump testing and calibration", "Automatic record keeping", "Cloud-based or local software options"],
-    specs: [{ label: "Function", value: "Calibration / Docking" }]
+    features: [
+      "Automatic bump testing and calibration",
+      "Cloud-based or local software (iNet) options",
+      "Automatic record keeping and compliance tracking",
+      "Print calibration certificates directly",
+      "Auto-detects gas cylinders and expiration dates"
+    ],
+    specs: [
+      { label: "Dimensions", value: "22.7 x 16.9 x 27.3 cm" },
+      { label: "Ports", value: "3 gas ports, 1 fresh air" },
+      { label: "Network", value: "10/100 Ethernet" },
+      { label: "Power", value: "110-240V AC" },
+      { label: "Function", value: "Calibration / Docking" }
+    ]
   },
 
   // Gastron Fixed Gas Detectors
@@ -493,8 +606,20 @@ export const products: Product[] = [
     gases: ["Flammable", "LEL"],
     image: "/img/gastron-gtd-2000ex.png",
     short: "Explosion-proof flammable gas detector.",
-    features: ["Catalytic combustion sensor", "Explosion-proof structure", "4-20mA output"],
-    specs: [{ label: "Detection", value: "Flammable Gas" }]
+    features: [
+      "Catalytic combustion sensor for flammable gases",
+      "Explosion-proof structure for hazardous areas",
+      "Standard 4-20mA continuous output signal",
+      "Built-in microprocessor for reliability",
+      "Easy zero and span adjustment"
+    ],
+    specs: [
+      { label: "Detection", value: "Flammable Gases (LEL)" },
+      { label: "Response Time", value: "< 15 sec" },
+      { label: "Output", value: "4-20mA DC" },
+      { label: "Power", value: "24V DC" },
+      { label: "Enclosure", value: "Ex d IIC T6" }
+    ]
   },
   {
     slug: "gastron-gtd-2000tx",
@@ -505,8 +630,20 @@ export const products: Product[] = [
     gases: ["Toxic", "O2"],
     image: "/img/gastron-gtd-2000tx.png",
     short: "Explosion-proof toxic and oxygen gas detector.",
-    features: ["Electrochemical sensor", "Fast response time", "Explosion proof"],
-    specs: [{ label: "Detection", value: "Toxic / Oxygen" }]
+    features: [
+      "High-precision electrochemical sensor",
+      "Fast response time to toxic leaks and oxygen deficiency",
+      "Explosion-proof structure (Ex d IIC T6)",
+      "Standard 4-20mA analog output",
+      "Easy maintenance and calibration"
+    ],
+    specs: [
+      { label: "Detection", value: "Toxic Gases & Oxygen" },
+      { label: "Output Signal", value: "4-20mA DC" },
+      { label: "Accuracy", value: "±3% / Full scale" },
+      { label: "Power", value: "24V DC" },
+      { label: "Enclosure", value: "Ex d IIC T6" }
+    ]
   },
   {
     slug: "gastron-gtd-3000ex",
@@ -517,8 +654,21 @@ export const products: Product[] = [
     gases: ["Flammable", "Toxic", "O2"],
     image: "/img/gastron-gtd-3000ex.png",
     short: "Smart type explosion-proof gas detector with local display.",
-    features: ["Built-in local display", "One-man calibration", "Explosion-proof structure"],
-    specs: [{ label: "Display", value: "OLED / LCD" }]
+    features: [
+      "Built-in microprocessor for continuous self-monitoring",
+      "2x16 character backlit LCD/OLED display",
+      "Non-intrusive calibration via magnetic bar",
+      "2-stage alarm outputs and relay contacts",
+      "Status LEDs for Normal, Alarm, and Trouble"
+    ],
+    specs: [
+      { label: "Measuring Type", value: "Diffusion type" },
+      { label: "Response Time", value: "< 15 seconds" },
+      { label: "Output Signal", value: "4-20mA DC, RS-485 Modbus" },
+      { label: "Operating Temp", value: "-20°C to 50°C" },
+      { label: "Enclosure Rating", value: "Ex d IIC T6 (Flame-proof)" },
+      { label: "Material", value: "SUS316" }
+    ]
   },
   {
     slug: "gastron-gtd-1000ex",
@@ -529,8 +679,20 @@ export const products: Product[] = [
     gases: ["Flammable"],
     image: "/img/gastron-gtd-1000ex.png",
     short: "Standard explosion-proof flammable gas detector.",
-    features: ["Catalytic sensor", "Explosion-proof structure"],
-    specs: [{ label: "Detection", value: "Flammable" }]
+    features: [
+      "Cost-effective flammable gas detector",
+      "Explosion-proof construction for industrial use",
+      "Continuous monitoring of LEL levels",
+      "Standard 4-20mA output",
+      "Simple installation and maintenance"
+    ],
+    specs: [
+      { label: "Sensor", value: "Catalytic Cell" },
+      { label: "Measuring Range", value: "0-100% LEL" },
+      { label: "Output", value: "4-20mA" },
+      { label: "Temp Range", value: "-20°C to 50°C" },
+      { label: "Rating", value: "Ex d IIC T5" }
+    ]
   },
   {
     slug: "gastron-gir-3000",
@@ -541,8 +703,20 @@ export const products: Product[] = [
     gases: ["CO2", "Flammable"],
     image: "/img/gastron-gir-3000.png",
     short: "Infrared gas detector for reliable and long-life detection.",
-    features: ["NDIR sensor technology", "5+ years sensor life", "Immune to poisoning"],
-    specs: [{ label: "Sensor", value: "Infrared (NDIR)" }]
+    features: [
+      "Non-Dispersive Infrared (NDIR) technology",
+      "Long sensor life (5+ years)",
+      "Immune to sensor poisoning",
+      "Works in oxygen-depleted environments",
+      "High accuracy and fast response time"
+    ],
+    specs: [
+      { label: "Sensor", value: "Infrared (NDIR)" },
+      { label: "Detection", value: "CO2 / Hydrocarbons" },
+      { label: "Response", value: "< 10 sec" },
+      { label: "Output", value: "4-20mA / RS-485" },
+      { label: "Rating", value: "Ex d IIC T6" }
+    ]
   },
 
   // Gastron Portable Gas Detectors
@@ -555,8 +729,21 @@ export const products: Product[] = [
     gases: ["H2S", "CO", "O2", "LEL"],
     image: "/img/gastron-g-finder-multi.png",
     short: "Compact and lightweight 4-gas portable detector for personal safety.",
-    features: ["Monitors 4 gases simultaneously", "One-button operation", "IP67 rating"],
-    specs: [{ label: "Sensors", value: "Up to 4" }]
+    features: [
+      "Monitors 4 gases (O2, CO, H2S, LEL) simultaneously",
+      "Maintenance-Free up to 2 years of continuous operation",
+      "Bluetooth 5.0 for mobile app integration",
+      "Compatible with G-Finder Pump (GFP-10)",
+      "Single-button operation with real-time display"
+    ],
+    specs: [
+      { label: "Dimensions", value: "67 x 119 x 45 mm" },
+      { label: "Weight", value: "223 g" },
+      { label: "Sensors", value: "Electrochemical & Infrared" },
+      { label: "Ingress Protection", value: "IP68" },
+      { label: "Battery", value: "3.6V Primary Lithium (Li-SOCl2)" },
+      { label: "Explosion Proof", value: "Ex ia IIC T4 Ga" }
+    ]
   },
   {
     slug: "gastron-g-finder-single",
@@ -567,8 +754,20 @@ export const products: Product[] = [
     gases: ["H2S", "CO", "O2"],
     image: "/img/gastron-g-finder-single.png",
     short: "Reliable single-gas detector for personal protection.",
-    features: ["Single gas monitoring", "Replaceable battery and sensor", "Compact design"],
-    specs: [{ label: "Sensors", value: "1 Gas" }]
+    features: [
+      "Detects O2, CO, or H2S reliably",
+      "2-year maintenance-free operation",
+      "High-visibility LCD display",
+      "Rubber overmold for impact protection",
+      "Loud 90dB alarm, bright LEDs, and vibration"
+    ],
+    specs: [
+      { label: "Dimensions", value: "54 x 91 x 32 mm" },
+      { label: "Weight", value: "93 g" },
+      { label: "Battery", value: "Lithium (2 years)" },
+      { label: "Alarms", value: "90dB / LED / Vibrate" },
+      { label: "Rating", value: "IP67" }
+    ]
   },
   {
     slug: "gastron-g-finder-pump",
@@ -579,8 +778,19 @@ export const products: Product[] = [
     gases: ["Sampling"],
     image: "/img/gastron-g-finder-pump.png",
     short: "Motorized pump module for G-Finder detectors.",
-    features: ["Motorized sampling pump", "Confined space entry capable", "Easy attachment"],
-    specs: [{ label: "Function", value: "Sampling Pump" }]
+    features: [
+      "Motorized sampling pump for G-Finder detectors",
+      "Easy slide-in attachment mechanism",
+      "Enables confined space entry clearance",
+      "Built-in dust and water filter",
+      "Low flow alarm indicator"
+    ],
+    specs: [
+      { label: "Flow Rate", value: "0.5 L/min" },
+      { label: "Power", value: "Rechargeable Li-ion" },
+      { label: "Operating Time", value: "10+ hours" },
+      { label: "Weight", value: "150 g" }
+    ]
   },
 
   // Gastron Fire & Safety / Controllers
@@ -593,8 +803,20 @@ export const products: Product[] = [
     gases: ["Flame"],
     image: "/img/gastron-gtf-1100u.png",
     short: "UV/IR flame detector for high-risk areas.",
-    features: ["Dual UV and IR sensing", "High immunity to false alarms", "Explosion-proof"],
-    specs: [{ label: "Detection", value: "Flame (UV/IR)" }]
+    features: [
+      "Dual UV and IR sensors for high reliability",
+      "High immunity to false alarms",
+      "Fast response to fires",
+      "Explosion-proof housing",
+      "Wide field of view"
+    ],
+    specs: [
+      { label: "Detection", value: "UV/IR Flame" },
+      { label: "Range", value: "Up to 30m" },
+      { label: "Response", value: "< 5 sec" },
+      { label: "Output", value: "4-20mA / Relays" },
+      { label: "Rating", value: "Ex d IIC T6" }
+    ]
   },
   {
     slug: "gastron-asc-100",
@@ -605,8 +827,19 @@ export const products: Product[] = [
     gases: ["Controller"],
     image: "/img/gastron-asc-100.png",
     short: "Alarm and status controller for gas detection systems.",
-    features: ["Multi-channel inputs", "Visual and audible alarms", "Relay outputs"],
-    specs: [{ label: "Function", value: "Controller" }]
+    features: [
+      "Advanced gas status controller",
+      "Multi-channel inputs (up to 12 channels)",
+      "LCD display with touch interface",
+      "RS-485 network communication",
+      "Visual and audible alarm indicators"
+    ],
+    specs: [
+      { label: "Inputs", value: "4-20mA (4 to 12 CH)" },
+      { label: "Outputs", value: "Relay / RS-485" },
+      { label: "Display", value: "Graphic LCD" },
+      { label: "Power", value: "110/220V AC" }
+    ]
   },
   {
     slug: "gastron-gtl-200",
@@ -614,11 +847,22 @@ export const products: Product[] = [
     brand: "Gastron",
     type: "Fixed",
     detectorType: "Fixed System",
-    gases: ["Controller"],
+    gases: ["Alarm"],
     image: "/img/gastron-gtl-200.png",
-    short: "Advanced multi-channel gas detector controller.",
-    features: ["Supports multiple gas detector inputs", "Touchscreen interface", "Network communication"],
-    specs: [{ label: "Function", value: "Multi-channel Controller" }]
+    short: "Combined Explosion-Proof Sounder & Beacon for gas and flame detection systems.",
+    features: [
+      "Combined Explosion-Proof Sounder & Beacon",
+      "Max 120 dB sound output with 64 sound sources",
+      "High-intensity LED with lens-type dispersion",
+      "Adjustable volume and rotation speed"
+    ],
+    specs: [
+      { label: "Sound Output", value: "120 dB @ 1m" },
+      { label: "Visual", value: "LED (Red, Green, Yellow, Blue)" },
+      { label: "Ingress Protection", value: "IP66" },
+      { label: "Explosion Proof", value: "Ex d IIC T4–T6" },
+      { label: "Weight", value: "6.2 kg" }
+    ]
   }
 ];
 

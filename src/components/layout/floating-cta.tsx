@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { MessageCircle } from "lucide-react";
+
 import { site, buildWhatsAppUrl } from "@/lib/site";
 import { useLanguage } from "@/lib/language-context";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export function FloatingWhatsApp() {
   const { t } = useLanguage();
@@ -11,10 +12,10 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener"
       aria-label={t("Chat di WhatsApp", "Chat on WhatsApp")}
-      className="fixed bottom-24 right-4 z-40 grid h-14 w-14 place-items-center rounded-full bg-success text-success-foreground shadow-elevated transition hover:scale-105 md:bottom-6 md:right-6"
+      className="fixed bottom-24 right-4 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-elevated transition hover:scale-105 md:bottom-6 md:right-6"
     >
-      <MessageCircle className="h-6 w-6" />
-      <span className="pointer-events-none absolute inset-0 animate-ping rounded-full bg-success/40" aria-hidden />
+      <WhatsAppIcon className="h-7 w-7" />
+      <span className="pointer-events-none absolute inset-0 animate-ping rounded-full bg-[#25D366]/40" aria-hidden />
     </a>
   );
 }

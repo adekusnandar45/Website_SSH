@@ -323,9 +323,11 @@ function FeaturedProducts() {
         </Link>
       </div>
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {localizedProducts.slice(0, 6).map((p) => (
-          <ProductCard key={p.slug} product={p} />
-        ))}
+        {["ventis-pro5", "radius-bz1", "tango-tx1", "gastron-gtd-3000ex", "gastron-gtl-200", "gastron-gtf-1100u"].map((slug) => {
+          const product = localizedProducts.find((p) => p.slug === slug);
+          if (!product) return null;
+          return <ProductCard key={product.slug} product={product} />;
+        })}
       </div>
     </section>
   );
