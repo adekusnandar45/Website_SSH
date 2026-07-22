@@ -3,6 +3,9 @@ import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { services, industries, site, buildWhatsAppUrl, buildEmailUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/language-context";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import logoSurya from "@/assets/Logo_Surya.png";
 
 function Logo({ className }: { className?: string }) {
   return (

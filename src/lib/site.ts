@@ -36,7 +36,10 @@ export function buildWhatsAppUrl(message: string) {
   return `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
 }
 
-export function buildEmailUrl(subject: string, body: string) {
+export function buildEmailUrl(
+  subject = `Permintaan Informasi — ${site.name}`,
+  body = "",
+) {
   return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
